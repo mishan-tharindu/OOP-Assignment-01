@@ -225,8 +225,22 @@ public class Whiteboard {
 
         System.out.println("All Polygons Area Value with Border :: "+getAllPolygonsAreawithBorder(allPolygonsAreaWithBorder));
 
+        System.out.println("All Polygons Border Area Only :: "+ getAllPolygonsBorderArea());
 
 
+
+    }
+
+    public static double getAllPolygonsBorderArea()
+    {
+
+
+        double polygonsarea = getAllPolygonsAreaValue(allPolygons);
+        double polygonsareaWithBorder = getAllPolygonsAreawithBorder(allPolygonsAreaWithBorder);
+
+        double boderArea = polygonsarea -polygonsareaWithBorder;
+
+        return boderArea;
     }
 
     public static double getAllPolygonsAreawithBorder(ArrayList<Double> polygonsList)
