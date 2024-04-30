@@ -1,8 +1,8 @@
 package com.shapes;
 
-public class Rectangle implements Polygon{
+public class Rectangle extends Polygon{
 
-    private double width, height;
+    private double width, height, borderWidth;
 
     public Rectangle(double width, double height){
 
@@ -11,6 +11,12 @@ public class Rectangle implements Polygon{
 
     }
 
+    public Rectangle(double width, double height, double borderWidth){
+        this.width = width;
+        this.height = height;
+        this.borderWidth = borderWidth;
+
+    }
 
 
 
@@ -23,7 +29,15 @@ public class Rectangle implements Polygon{
     }
 
     @Override
-    public double addBorder() {
-        return 0;
+    public double getAreaWithBorder() {
+        // Calculate the length and width considering the border
+        double totalLength = height + 2 * borderWidth;
+        double totalWidth = width + 2 * borderWidth;
+
+        double totalArea = totalLength * totalWidth;
+
+
+        return totalArea;
     }
+
 }

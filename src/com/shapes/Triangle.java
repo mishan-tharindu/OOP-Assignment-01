@@ -1,8 +1,10 @@
 package com.shapes;
 
-public class Triangle implements Polygon{
+public class Triangle extends Polygon {
 
-    private double base, height, borderWidth;
+    public double base;
+    public double height;
+    private double borderWidth;
 
     public Triangle(double base, double height)
     {
@@ -10,7 +12,7 @@ public class Triangle implements Polygon{
         this.height = height;
     }
 
-    Triangle(double base, double height, double borderWidth){
+    public Triangle(double base, double height, double borderWidth){
         this.base = base;
         this.height = height;
         this.borderWidth = borderWidth;
@@ -26,8 +28,7 @@ public class Triangle implements Polygon{
     }
 
     @Override
-    public double addBorder() {
-
+    public double getAreaWithBorder() {
         double newBaseValue = base + 2 * borderWidth;
         double newHeightValue = height + 2 * height;
 
@@ -35,4 +36,5 @@ public class Triangle implements Polygon{
 
         return areawithBorder;
     }
+
 }

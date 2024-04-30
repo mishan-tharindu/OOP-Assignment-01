@@ -1,6 +1,6 @@
 package com.shapes;
 
-public class Parallelogram implements Polygon{
+public class Parallelogram extends Polygon {
 
     private double base, height, borderWidth;
 
@@ -10,7 +10,7 @@ public class Parallelogram implements Polygon{
         this.height = height;
     }
 
-    Parallelogram(double base, double height, double borderWidth)
+    public Parallelogram(double base, double height, double borderWidth)
     {
         this.base = base;
         this.height = height;
@@ -26,7 +26,7 @@ public class Parallelogram implements Polygon{
     }
 
     @Override
-    public double addBorder() {
+    public double getAreaWithBorder() {
 
         double newBaseValue = base + 2 * borderWidth;
         double newHeightValue = height + 2 * height;
@@ -35,4 +35,5 @@ public class Parallelogram implements Polygon{
 
         return areawithBorder;
     }
+
 }

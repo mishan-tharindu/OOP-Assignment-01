@@ -1,9 +1,9 @@
 package com.shapes;
 
-public class Square implements Polygon {
-    private double length;
+public class Square extends Polygon{
+    private double length, area, areawithBoder;
 
-    private double borderWidth;
+
 
 
     public Square(double length)
@@ -13,8 +13,8 @@ public class Square implements Polygon {
 
     public Square(double length, double borderWidth){
 
+        super(borderWidth);
         this.length = length;
-        this.borderWidth = borderWidth;
 
     }
 
@@ -22,14 +22,19 @@ public class Square implements Polygon {
     public double getArea() {
 
         // Calculate the area of the Square
-        return length * length;
+        area = length * length;
+
+        return area;
     }
+
 
     @Override
-    public double addBorder() {
+    public double getAreaWithBorder() {
 
-        double areawithBorder = Math.pow(length + 2 * borderWidth, 2);
+        areawithBoder = Math.pow(length + 2 * getBorderWidth(), 2);
 
-        return areawithBorder;
+        return areawithBoder;
     }
+
+
 }

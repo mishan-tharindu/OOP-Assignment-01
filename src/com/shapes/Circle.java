@@ -1,32 +1,43 @@
 package com.shapes;
 
-public class Circle implements Polygon{
+public class Circle extends Polygon {
 
-    private double radius, borderWidth;
+    public double radius;
+
+    private double area;
+    private double areaWithBoder;
+
+
+
 
     public Circle(double radius)
     {
         this.radius = radius;
     }
 
-    Circle(double radius, double borderWidth){
+    public Circle(double radius, double borderWidth){
+
+        super(borderWidth);
         this.radius = radius;
-        this.borderWidth = borderWidth;
     }
 
     @Override
     public double getArea() {
 
-        double circleArea = Math.PI * radius * radius;
+        area = Math.PI * radius * radius;
 
-        return  circleArea;
+        return  area;
     }
 
     @Override
-    public double addBorder() {
+    public double getAreaWithBorder() {
 
-        double areaWithBorder = Math.PI * Math.pow(radius + borderWidth, 2);
+       double totalRadius = radius + getBorderWidth();
 
-        return 0;
+        areaWithBoder = Math.PI * Math.pow(totalRadius, 2);
+
+        return areaWithBoder;
     }
+
+
 }
